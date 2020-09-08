@@ -55,28 +55,28 @@
 
     - name: Download confluence
       get_url:
-        url: https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.15.8.tar.gz
+        url: https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-7.4.3.tar.gz
         dest: /home/vagrant 
 
     - name: Install confluence
       shell: |
         mkdir /home/vagrant/confluence
-        tar -xzf atlassian-confluence-6.15.8.tar.gz -C /home/vagrant/confluence
+        tar -xzf atlassian-confluence-7.4.3.tar.gz -C /home/vagrant/confluence
         cd /home/vagrant/confluence
-        tar -xzf atlassian-confluence-6.15.8.tar
+        tar -xzf atlassian-confluence-7.4.3.tar
         chown -R vagrant /home/vagrant/confluence
         chmod -R u=rwx,go-rwx /home/vagrant/confluence
         mkdir /home/vagrant/confluence-home
         chown -R vagrant /home/vagrant/confluence-home
         chmod -R u=rwx,go-rwx /home/vagrant/confluence-home 
       args:
-        creates: "/home/vagrant/confluence/atlassian-confluence-6.15.8/bin/start-confluence.sh"
+        creates: "/home/vagrant/confluence/atlassian-confluence-7.4.3/bin/start-confluence.sh"
       become: true  
       
     - name: Copy Confluence home to Confluence
       copy:
         src: "confluence-init.properties" 
-        dest: "/home/vagrant/confluence/atlassian-confluence-6.15.8/confluence/WEB-INF/classes"  
+        dest: "/home/vagrant/confluence/atlassian-confluence-7.4.3/confluence/WEB-INF/classes"  
       become: true
       
     - name: Copy Confluence service 
