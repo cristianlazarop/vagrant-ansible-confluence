@@ -5,8 +5,8 @@ After=syslog.target network.target
 [Service]
 Type=forking
 User=vagrant
-ExecStart=/home/vagrant/confluence/atlassian-confluence-6.15.8/bin/start-confluence.sh
-ExecStop=/home/vagrant/confluence/atlassian-confluence-6.15.8/bin/stop-confluence.sh
+ExecStart=/home/vagrant/confluence/atlassian-confluence-7.4.3/bin/start-confluence.sh
+ExecStop=/home/vagrant/confluence/atlassian-confluence-7.4.3/bin/stop-confluence.sh
 SuccessExitStatus=143
 
 [Install]
